@@ -5,11 +5,11 @@ use std::{
 
 fn main() {
     let file = fs::File::open("./src/input.txt").expect("Should have been able to read the file");
+    let reader = BufReader::new(file);
+
     let text_digits = [
         "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
     ];
-
-    let reader = BufReader::new(file);
     let collection = reader
         .lines()
         .map(|l| {
@@ -24,7 +24,7 @@ fn main() {
                     let line_substring_length = line_substring.len();
                     line_substring =
                         &line_substring[found_digit_index.unwrap() + 1..line_substring.len()];
-                    print!("{}\n: ", line_substring);
+
                     digits_in_line.push((
                         (index + 1) as u8,
                         found_digit_index.unwrap() + line_length - line_substring_length,
