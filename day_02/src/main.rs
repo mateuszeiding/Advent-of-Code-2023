@@ -71,11 +71,6 @@ fn main() {
                 }
             });
 
-            println!(
-                "Game: {}, is_it_possible: {}, blue: {}, green: {}, red: {}",
-                game_id, is_it_possible, blue_value, green_value, red_value
-            );
-
             return (
                 game_id,
                 is_it_possible,
