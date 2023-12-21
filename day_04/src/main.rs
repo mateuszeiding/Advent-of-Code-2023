@@ -1,7 +1,6 @@
 use std::{
     fs,
     io::{prelude::*, BufReader},
-    iter,
 };
 
 fn main() {
